@@ -93,9 +93,9 @@ export default function Home() {
                     <div className={styles.svg_container}>
                         <svg viewBox={`0 0 ${windowWidth} 800`}>
                             <defs>
-                                <radialGradient id="curveGradient" cx="50%" cy="100%" r="60%" fx="50%" fy="100%">
+                                <radialGradient id="curveGradient" cx="100%" cy="0%" r="70%" fx="100%" fy="0%">
                                     <stop offset="0%" stopColor="#1d1e30" />
-                                    <stop offset="100%" stopColor="#070812" />
+                                    <stop offset="100%" stopColor="#0b0c1d" />
                                 </radialGradient>
                             </defs>
                             <path
