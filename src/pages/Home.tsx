@@ -9,6 +9,17 @@ export default function Home() {
     const defaultCurveValue = 800;
     const curveRate = 5;
 
+    // https://stackoverflow.com/questions/60118216/how-do-i-stop-dark-mode-from-destroying-my-css
+    useEffect(() => {
+        if (navigator.userAgent.match(/Samsung/)) {
+            alert(
+                'Your browser might not be showing this website correctly. ' +
+                'Please use a standards-compliant browser instead.\n\n' +
+                'Recommended: Chrome, edge, firefox'
+            )
+        }
+    }, []);
+
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
     // Window resizing for svg background
@@ -81,9 +92,14 @@ export default function Home() {
                 <section id="home" className={`${styles.section} ${styles.home}`}>
                     <div className={styles.svg_container}>
                         <svg viewBox={`0 0 ${windowWidth} 800`}>
+                            <defs>
+                                <radialGradient id="curveGradient" cx="50%" cy="100%" r="60%" fx="50%" fy="100%">
+                                    <stop offset="0%" stopColor="#1d1e30" />
+                                    <stop offset="100%" stopColor="#070812" />
+                                </radialGradient>
+                            </defs>
                             <path
                                 ref={curveRef}
-                                fill="#0b0c1d"
                                 d={`M ${windowWidth} 800 Q ${windowWidth / 2} 800 0 800 L 0 0 ${windowWidth} 0 Z`}
                             />
                         </svg>
@@ -98,8 +114,9 @@ export default function Home() {
                     <BioSection />
                 </section>
                 <section id="projects" className={`${styles.section} ${styles.projects}`}>
-                    Project List
+                    <ProjectsSection />
                 </section>
+                <section className={`${styles.section} ${styles.empty}`}></section>
             </div>
         </>
     );

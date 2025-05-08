@@ -4,23 +4,22 @@
 
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    background-color: #0b0c1d;
 }
 
 body {
     margin: 0;
-    min-width: 320px;
     min-height: 100vh;
 }
 
 h1 {
-    font-size: 3.2em;
+    font-size: 4em;
     line-height: 1.1;
 }
 
 h2, h3 {
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 p, li {
@@ -28,6 +27,24 @@ p, li {
     line-height: 1.6;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
+}
+
+@media (max-width: 550px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+    
+    p, li {
+        font-size: 0.8rem;
+    }
 }
 
 button {
